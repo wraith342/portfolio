@@ -1,0 +1,72 @@
+
+@import url('https://fonts.cdnfonts.com/css/revamped');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    margin: 0; 
+    padding: 0;
+    font-family: "Roboto";
+    color: whitesmoke;
+    background-image: url("https://images6.alphacoders.com/112/1126605.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body a {
+    color: #0084ff;
+    text-decoration: none;
+}
+
+body #main {
+    border-style: solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #ff00f2, #ff0000);
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    backdrop-filter: blur(10px);
+}
+
+body #main #projects #projectlist {
+    border-style: solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #ffae00, #56ff2c);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3%;
+}
+
+body #main #projects #projectlist #project #projectdisc {
+    margin-top: -20px; 
+}
+
+body #spotify {
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-style: solid;
+    border-radius: 5px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #0eff6a, #0084ff);
+    backdrop-filter: blur(5px);
+}
+
+body #welcomename {
+    display: inline
+}
+
+body #artist {
+    margin-top: -2%;
+}
+
+body #pfp {
+    margin-top: 1%;
+    border-style: solid;
+    border-color: antiquewhite;
+    border-radius: 100%;
+}
