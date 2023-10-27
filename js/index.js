@@ -54,41 +54,73 @@ async function createCircle() {
     const circle = document.createElement("div");
     circle.style.position = "absolute";
     circle.style.borderRadius = "50%";
-    circle.style.width = "10px";
-    circle.style.height = "10px";
+    circle.style.width = "8px";
+    circle.style.height = "8px";
     circle.style.backgroundColor = "blue";
     circle.style.opacity = "0.5";
     circle.style.pointerEvents = "none";
+    circle.style.boxShadow = "0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue";
+    circle.style.transition = "width 0.2s, height 0.2s";
     document.body.appendChild(circle);
 
-    document.addEventListener("mousemove", e => {
-        circle.style.left = e.pageX - 25 + "px";
-        circle.style.top = e.pageY - 25 + "px";
-    });
+    let opacity = 0.5;
+    let increasing = true;
 
-    document.addEventListener("contextmenu", e => {
-        e.preventDefault();
-    });
 
     while (true) {
-        await sleep(10);
+        await sleep(1);
+
+        document.addEventListener("mousemove", e => {
+            circle.style.left = e.pageX - circle.offsetWidth / 2 + "px";
+            circle.style.top = e.pageY - circle.offsetHeight / 2 + "px";
+        });
+    
+        document.addEventListener("contextmenu", e => {
+            e.preventDefault();
+        });
 
         document.addEventListener("mousedown", e => {
             isClicked = true; 
+            circle.style.backgroundColor = getRandomColor();
+            circle.style.boxShadow = `0 0 10px ${circle.style.backgroundColor}, 0 0 20px ${circle.style.backgroundColor}, 0 0 30px ${circle.style.backgroundColor}, 0 0 40px ${circle.style.backgroundColor}, 0 0 50px ${circle.style.backgroundColor}`;
         });
 
         document.addEventListener("mouseup", e => {
             isClicked = false; 
+            circle.style.boxShadow = `0 0 10px ${circle.style.backgroundColor}, 0 0 20px ${circle.style.backgroundColor}, 0 0 30px ${circle.style.backgroundColor}, 0 0 40px ${circle.style.backgroundColor}, 0 0 50px ${circle.style.backgroundColor}`;
         });
 
         if (isClicked) {
-            circle.style.width = "75px";
-            circle.style.height = "75px";
+            circle.style.width = "65px";
+            circle.style.height = "65px";
         } else {
-            circle.style.width = "50px";
-            circle.style.height = "50px";
+            circle.style.width = "40px";
+            circle.style.height = "40px";
         }
+
+        if (increasing) {
+            opacity += 0.01;
+            if (opacity >= 1) {
+                increasing = false;
+            }
+        } else {
+            opacity -= 0.01;
+            if (opacity <= 0.5) {
+                increasing = true;
+            }
+        }
+
+        circle.style.opacity = opacity.toString();
     }
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 window.onload = async function() {

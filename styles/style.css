@@ -23,10 +23,18 @@ body #main {
     border-radius: 5px;
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #ff00f2, #ff0000);
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     backdrop-filter: blur(10px);
+}
+
+body #main #links {
+    margin-bottom: 1.5%;
+}
+
+body #main #links a {
+    color: whitesmoke; 
 }
 
 body #main #projects #projectlist {
