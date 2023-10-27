@@ -1,4 +1,4 @@
-# Small and shitty portfolio with lanyard integration
+# wraith.systems site
   <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://wraith.systems/png/brave.png">
   <source media="(prefers-color-scheme: light)" srcset="https://wraith.systems/png/brave.png">
