@@ -7,7 +7,7 @@ body {
     padding: 0;
     font-family: "Roboto";
     color: whitesmoke;
-    background-image: url("https://images6.alphacoders.com/112/1126605.png");
+    background-image: url("https://images7.alphacoders.com/133/1337390.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,6 +16,30 @@ body {
 body a {
     color: #0084ff;
     text-decoration: none;
+}
+
+body #navbar {
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    border-style: solid;
+    border-radius: 10px;
+    border-color: transparent;
+
+    backdrop-filter: blur(50px);
+}
+
+body #navbar a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+body #navbar #home {
+    margin-right: 30%;
 }
 
 body #main {
@@ -52,7 +76,7 @@ body #main #projects #projectlist #project #projectdisc {
 }
 
 body #spotify {
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     padding-top: 2%;
